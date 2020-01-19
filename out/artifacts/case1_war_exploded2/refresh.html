@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>刷新</title>
+</head>
+<body>
+    <img id="refresh" src="/case1/refreshServlet"/>
+
+<!--    <a id="change" href="">刷新</a>-->
+</body>
+<script>
+    window.onload = function() {
+        var img = document.getElementById("refresh");
+        img.onclick = function() {
+            var date = new Date().getTime();
+            img.src = "/case1/refreshServlet";
+        }
+    }
+</script>
+</html>
