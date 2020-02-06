@@ -1,5 +1,4 @@
 package top.zhwei.util;
-
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 import javax.sql.DataSource;
@@ -14,6 +13,7 @@ import java.util.Properties;
  */
 public class JDBCUtils {
     private static DataSource dataSource;
+
     static {
         //加载配置文件
         Properties properties = new Properties();
