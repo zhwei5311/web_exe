@@ -22,7 +22,7 @@ import java.io.IOException;
 @WebServlet("/downloadServlet")
 public class DownloadServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         //1、获取请求参数（文件名称）
         String filename = req.getParameter("filename");
         //2、使用字节输入流加载文件进内存

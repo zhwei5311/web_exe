@@ -24,7 +24,6 @@ public class UserDao {
             User user1 = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(User.class),
                     user.getUsername(), user.getPassword());
             return user1;
-
         } catch (Exception e) {
             e.printStackTrace();
             return null;

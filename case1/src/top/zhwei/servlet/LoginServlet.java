@@ -6,6 +6,7 @@ import top.zhwei.domain.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,6 +45,10 @@ public class LoginServlet extends HttpServlet {
         } else {
             req.setAttribute("user",user);
             req.getRequestDispatcher("/successServlet").forward(req,resp);
+            Cookie[] cookies = req.getCookies();
+            for (Cookie cookie : cookies) {
+                System.err.println(cookie.getName() + cookie.getValue());
+            }
         }
     }
 
