@@ -45,11 +45,11 @@
     p2不为空
 </c:if>
 <%-- 使用jstl标签进行0~10数据偶数的循环遍历输出 --%>
-<%--<c:forEach begin="1" end="10" var = "i" step="1" varStatus="s">--%>
-<%--    <c:if test="${i % 2 == 0}">--%>
-<%--        ${i}--%>
-<%--    </c:if>--%>
-<%--</c:forEach>--%>
+<c:forEach begin="1" end="10" var = "i" step="1" varStatus="s">
+    <c:if test="${i % 2 == 0}">
+        ${i}
+    </c:if>
+</c:forEach>
 
 </body>
 </html>

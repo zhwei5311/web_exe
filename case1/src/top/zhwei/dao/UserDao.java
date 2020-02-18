@@ -14,7 +14,7 @@ public class UserDao {
 
     /**
      * 登录
-     *
+     *  Data Access Object
      * @param:user用户名和密码
      * @return:user 没有查询到，返回null
      */

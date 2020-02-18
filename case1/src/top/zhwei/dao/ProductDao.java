@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Ticket: ProductDao
- *
+ *Data Access Object
  * @author zhwei
  * @email zhaowei@boranet.com.cn
  * @Date: 2020/2/10 23:04

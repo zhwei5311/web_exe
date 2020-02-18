@@ -39,20 +39,17 @@
     根据已知数据使用jstl标签判断对象是否为空
  --%>
 <c:if test="${not empty p1}">
-<%--    p1不为空--%>
-    <c:forEach items="p1" var="user" varStatus="s">
-        ${user}
-    </c:forEach>
+    p1不为空
 </c:if>
 <c:if test="${not empty p2}">
     p2不为空
 </c:if>
 <%-- 使用jstl标签进行0~10数据偶数的循环遍历输出 --%>
-<%--<c:forEach begin="1" end="10" var = "i" step="1" varStatus="s">--%>
-<%--    <c:if test="${i % 2 == 0}">--%>
-<%--        ${i}--%>
-<%--    </c:if>--%>
-<%--</c:forEach>--%>
+<c:forEach begin="1" end="10" var = "i" step="1" varStatus="s">
+    <c:if test="${i % 2 == 0}">
+        ${i}
+    </c:if>
+</c:forEach>
 
 </body>
 </html>
