@@ -21,6 +21,7 @@ import java.util.List;
  */
 @WebServlet("/userListServlet")
 public class UserListServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserService userService = new UserServiceImpl();
         List<User> userList = userService.findAll();
@@ -28,6 +29,7 @@ public class UserListServlet extends HttpServlet {
         request.getRequestDispatcher("/list.jsp").forward(request,response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request,response);
     }

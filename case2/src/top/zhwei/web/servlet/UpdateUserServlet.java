@@ -23,6 +23,7 @@ import java.util.Map;
  */
 @WebServlet("/updateUserServlet")
 public class UpdateUserServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1、设置编码
         request.setCharacterEncoding("utf-8");
@@ -44,6 +45,7 @@ public class UpdateUserServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/userListServlet");
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
     }

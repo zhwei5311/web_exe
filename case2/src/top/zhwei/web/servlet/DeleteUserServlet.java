@@ -19,6 +19,7 @@ import java.io.IOException;
  */
 @WebServlet("/deleteUserServlet")
 public class DeleteUserServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //2、获取要删除的id
         String id = request.getParameter("id");
@@ -29,6 +30,7 @@ public class DeleteUserServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/userListServlet");
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
     }
