@@ -63,7 +63,7 @@
 	<script>
 		function delStudent(id){
 		    if(confirm("您确认要删除吗")){
-		        location.href="${pageContext.request.contextPath}/student/deleteById.action?id="+id;
+		        location.href="${pageContext.request.contextPath}/student/remove.action?id="+id;
 			}
 		}
 	</script>
@@ -94,7 +94,7 @@
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/user/findAll.do">学生管理</a></li>
+					href="${pageContext.request.contextPath}/student/findAll.do">学生管理</a></li>
 
 				<li class="active">账号信息</li>
 			</ol>
@@ -117,7 +117,7 @@
 							<div class="pull-left">
 								<div class="form-group form-inline">
 									<div class="btn-group">
-										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/user/saveUI'">
+										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/student/save'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
 										
@@ -129,7 +129,7 @@
 							</div>
 							<div class="box-tools pull-right">
 								<div class="has-feedback">
-									<form action="${pageContext.request.contextPath}/user/findByUsername.action" method="post">
+									<form action="${pageContext.request.contextPath}/student/findByUsername.action" method="post">
 									<input type="text" class="form-control input-sm"
 										placeholder="搜索" name="username"> <span
 										class="glyphicon glyphicon-search form-control-feedback"></span></form>
@@ -151,6 +151,7 @@
 										<th class="sorting">年龄</th>
 										<th class="sorting">电话</th>
 										<th class="sorting">所属班级</th>
+										<th class="sorting">操作</th>
 									</tr>
 								</thead>
 
@@ -163,7 +164,7 @@
 											<td>${student.sex}</td>
 											<td>${student.age}</td>
 											<td>${student.phone}</td>
-											<td>${student.grade.gradeName}</td>
+											<td>${student.grade.gradename}</td>
 											<td >
 												<a href="student-edit.jsp" class="btn bg-olive btn-xs">修改</a>
 												<a href="javascript:void(0)" onclick="delStudent(${student.studentno})" class="btn bg-olive btn-xs">删除</a>

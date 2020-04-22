@@ -127,13 +127,13 @@
 
 						<div class="col-md-2 title">班级</div>
 						<div class="col-md-4 data"style="padding-top: 10px">
-							<select name="gradeId" name="gradeId" >
+							<select name="gradeid" name="gradeid" >
 								<c:forEach items="${gradeList}" var="grade" >
-									<c:if test="${student.grade.gradeId==grade.gradeId}">
-									<option value="${grade.gradeId}" selected="selected">${grade.gradeName}</option>
+									<c:if test="${student.grade.gradeid==grade.gradeid}">
+									<option value="${grade.gradeid}" selected="selected">${grade.gradename}</option>
 									</c:if>
-									<c:if test="${student.grade.gradeId!=grade.gradeId}">
-										<option value="${grade.gradeId}">${grade.gradeName}</option>
+									<c:if test="${student.grade.gradeid!=grade.gradeid}">
+										<option value="${grade.gradeid}">${grade.gradename}</option>
 									</c:if>
 								</c:forEach>
 							</select>
