@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhwei.test.mapper.GradeMapper">
+
+    <sql id="Base_Column_List">
+        `gradeid`,`gradename`,`address`
+    </sql>
+
+    <select id="get" resultType="zhwei.test.domain.Grade">
+		select `gradeid`,`gradename`,`address` from grade where gradeid = #{value}
+	</select>
+
+    <select id="list" resultType="zhwei.test.domain.Grade">
+        select `gradeid`,`gradename`,`address` from grade
+        <where>
+            <if test="gradeid != null and gradeid != ''"> and gradeid = #{gradeid} </if>
+            <if test="gradename != null and gradename != ''"> and gradename = #{gradename} </if>
+            <if test="address != null and address != ''"> and address = #{address} </if>
+        </where>
+        <choose>
+            <otherwise>
+                order by gradeid
+            </otherwise>
+        </choose>
+        <if test="offset != null and limit != null">
+            limit #{offset}, #{limit}
+        </if>
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from grade
+        <where>
+            <if test="gradeid != null and gradeid != ''"> and gradeid = #{gradeid} </if>
+            <if test="gradename != null and gradename != ''"> and gradename = #{gradename} </if>
+            <if test="address != null and address != ''"> and address = #{address} </if>
+        </where>
+    </select>
+
+    <insert id="save" parameterType="zhwei.test.domain.Grade" useGeneratedKeys="true" keyProperty="id">
+		insert into grade
+		(
+			`gradeid`,
+			`gradename`,
+			`address`
+		)
+		values
+		(
+			#{gradeid},
+			#{gradename},
+			#{address}
+		)
+	</insert>
+
+    <update id="update" parameterType="zhwei.test.domain.Grade">
+        update grade
+        <set>
+            <if test="gradeid != null">`gradeid` = #{gradeid}, </if>
+            <if test="gradename != null">`gradename` = #{gradename}, </if>
+            <if test="address != null">`address` = #{address}, </if>
+        </set>
+        where gradeid = #{gradeid}
+    </update>
+
+    <delete id="remove">
+		delete from grade where gradeid = #{value}
+	</delete>
+
+</mapper>

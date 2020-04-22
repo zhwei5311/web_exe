@@ -100,10 +100,10 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">班级信息</div>
 					<div class="row data-type">
-						<input type="hidden" name="gradeId" value="">
+						<input type="hidden" name="gradeid" value="">
 						<div class="col-md-2 title">班级名称</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="gradeName"
+							<input type="text" class="form-control" name="gradename"
 								placeholder="班级名称" value="">
 						</div>
 

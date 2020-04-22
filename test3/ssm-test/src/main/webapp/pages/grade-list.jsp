@@ -156,12 +156,12 @@
 									<c:forEach items="${gradeList}" var="grade">
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
-											<td>${grade.gradeId}</td>
-											<td>${grade.gradeName}</td>
+											<td>${grade.gradeid}</td>
+											<td>${grade.gradename}</td>
 											<td>${grade.address}</td>
 											<td >
 												<a href="grade-edit.jsp" class="btn bg-olive btn-xs">修改</a>
-												<a href="javascript:void(0)" onclick="delGrade(${grade.gradeId})" class="btn bg-olive btn-xs">删除</a>
+												<a href="javascript:void(0)" onclick="delGrade(${grade.gradeid})" class="btn bg-olive btn-xs">删除</a>
 												<a href="student-list.jsp" class="btn bg-olive btn-xs">查看班级学员</a>
 											</td>
 										</tr>
