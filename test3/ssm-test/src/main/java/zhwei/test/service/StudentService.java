@@ -3,6 +3,7 @@ package zhwei.test.service;
 import zhwei.test.domain.Student;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Ticket: StudentService
@@ -15,7 +16,7 @@ public interface StudentService {
 
     Student get(int studentno);
 
-    List<Student> findAll();
+    List<Student> findAll(Map<String, Object> map);
 
     void save(Student student);
 

@@ -9,6 +9,7 @@ import zhwei.test.mapper.StudentMapper;
 import zhwei.test.service.StudentService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Ticket: StudentServiceImpl
@@ -32,8 +33,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> findAll() {
-        List<Student> studentList = studentMapper.list(null);
+    public List<Student> findAll(Map<String, Object> map) {
+        List<Student> studentList = studentMapper.list(map);
         for (Student student : studentList) {
             Grade grade = gradeMapper.get(student.getGradeid());
             student.setGrade(grade);

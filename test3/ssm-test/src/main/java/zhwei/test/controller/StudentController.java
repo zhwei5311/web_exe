@@ -23,16 +23,17 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    //查询所有学生信息列表
     @RequestMapping("/findAll.*")
     public ModelAndView findAll() {
-        List<Student> studentList = studentService.findAll();
+        List<Student> studentList = studentService.findAll(null);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("studentList",studentList);
-        modelAndView.setViewName("student-list");
+        modelAndView.setViewName("student/student-list");
         return modelAndView;
     }
 
-    //保存
+    //保存学生信息
     @RequestMapping(value = "/save",produces = "text/html;charset=UTF-8")
     @ResponseBody
     public String save(Student student) {
@@ -40,16 +41,18 @@ public class StudentController {
         return "保存成功";
     }
 
+    //更新学生信息
     @RequestMapping("/update")
     @ResponseBody
     public void update(Student student) {
         studentService.update(student);
     }
 
-    @RequestMapping("/remove.action/{studentno}")
-    public String remove(@PathVariable("studentno")int studentno) {
+    //删除学生
+    @RequestMapping("/remove.*/{studentno}")
+    public String remove(@PathVariable("studentno")Integer studentno) {
         studentService.remove(studentno);
-        return "redirect:/student/student-list";
+        return "redirect:/student/findAll.action";
     }
 
     /**
