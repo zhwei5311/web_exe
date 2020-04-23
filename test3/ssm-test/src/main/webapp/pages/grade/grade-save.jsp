@@ -79,62 +79,38 @@
         <!-- 内容头部 -->
         <section class="content-header">
             <h1>
-                学生管理 <small>学生表单</small>
+                班级管理 <small>班级表单</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="${pageContext.request.contextPath}/index.jsp"><i
                         class="fa fa-dashboard"></i> 首页</a></li>
-                <li><a href="${pageContext.request.contextPath}/grade/findAll.do">学生管理</a></li>
-                <li class="active">学生表单</li>
+                <li><a href="${pageContext.request.contextPath}/grade/findAll.do">班级管理</a></li>
+                <li class="active">班级表单</li>
             </ol>
         </section>
         <!-- 内容头部 /-->
 
-        <form action="${pageContext.request.contextPath}/student/save"
+        <form action="${pageContext.request.contextPath}/grade/save"
               method="post">
             <!-- 正文区域 -->
-            <section class="content"> <!--学生信息-->
+            <section class="content"> <!--班级信息-->
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">学生信息</div>
+                    <div class="panel-heading">班级信息</div>
                     <div class="row data-type">
 
-                        <div class="col-md-2 title">姓名</div>
+                        <div class="col-md-2 title">班级名称</div>
                         <div class="col-md-4 data">
-                            <input type="text" class="form-control" name="name"
-                                   placeholder="姓名" value="">
+                            <input type="text" class="form-control" name="gradename"
+                                   placeholder="班级名称" value="">
                         </div>
-                        <div class="col-md-2 title">性别</div>
+                        <div class="col-md-2 title">地址</div>
                         <div class="col-md-4 data">
-                            <input type="text" class="form-control" name="sex"
-                                   placeholder="性别" value="">
+                            <input type="text" class="form-control" name="address"
+                                   placeholder="地址" value="">
                         </div>
-                        <div class="col-md-2 title">年龄</div>
-                        <div class="col-md-4 data">
-                            <input type="text" class="form-control" name="age"
-                                   placeholder="年龄" value="">
-                        </div>
-                        <div class="col-md-2 title">电话</div>
-                        <div class="col-md-4 data">
-                            <input type="text" class="form-control" name="phone"
-                                   placeholder="电话" value="">
-                        </div>
-                        <div class="col-md-2 title">所属班级</div>
-                        <div class="col-md-4 data">
-                            <div class="col-md-2 title">班级</div>
-                            <div class="col-md-4 data"style="padding-top: 10px">
-                                <select name="gradeid" name="gradeid" >
-                                    <c:forEach items="${gradeList}" var="grade" >
-                                        <c:if test="${student.grade.gradeid==grade.gradeid}">
-                                            <option value="${grade.gradeid}" selected="selected">${grade.gradename}</option>
-                                        </c:if>
-                                        <c:if test="${student.grade.gradeid!=grade.gradeid}">
-                                            <option value="${grade.gradeid}">${grade.gradename}</option>
-                                        </c:if>
-                                    </c:forEach>
-                                </select>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
                 <!--订单信息/--> <!--工具栏-->

@@ -2,6 +2,8 @@ package zhwei.test.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -47,6 +49,13 @@ public class GradeController {
     public String save(Grade grade) {
         gradeService.save(grade);
         return "redirect:/grade/findAll.action";
+    }
+
+    @GetMapping("/edit/{gradeId}")
+    String edit(@PathVariable("gradeId") Integer gradeId, Model model) {
+        Grade grade = gradeService.get(gradeId);
+        model.addAttribute("grade",grade);
+        return "grade/grade-edit";
     }
 
     //更新学生信息

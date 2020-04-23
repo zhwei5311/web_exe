@@ -92,7 +92,7 @@
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action=""
+			<form action="${pageContext.request.contextPath}/grade/update"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -104,14 +104,14 @@
 						<div class="col-md-2 title">班级名称</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="gradename"
-								placeholder="班级名称" value="">
+								placeholder="班级名称" value="${grade.gradename}">
 						</div>
 
 
                         <div class="col-md-2 title">班级地址</div>
                         <div class="col-md-4 data">
                             <input type="text" class="form-control" name="address"
-                                   placeholder="班级地址" value="">
+                                   placeholder="班级地址" value="${grade.address}">
                         </div>
 
 					</div>

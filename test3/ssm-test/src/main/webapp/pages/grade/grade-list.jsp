@@ -117,7 +117,7 @@
 							<div class="pull-left">
 								<div class="form-group form-inline">
 									<div class="btn-group">
-										<button type="button" class="btn btn-default" title="新建" >
+										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/grade/grade-save.jsp'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
 										
@@ -162,7 +162,7 @@
 											<td >
 												<a href="grade-edit.jsp" class="btn bg-olive btn-xs">修改</a>
 												<a href="javascript:void(0)" onclick="delGrade(${grade.gradeid})" class="btn bg-olive btn-xs">删除</a>
-												<a href="../student/student-list.jsp" class="btn bg-olive btn-xs">查看班级学员</a>
+												<a href="${pageContext.request.contextPath}/student/findAll.action/"+gradeid class="btn bg-olive btn-xs">查看班级学员</a>
 											</td>
 										</tr>
 									</c:forEach>

@@ -117,7 +117,7 @@
 							<div class="pull-left">
 								<div class="form-group form-inline">
 									<div class="btn-group">
-										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/student/save'">
+										<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/student/saveUI'">
 											<i class="fa fa-file-o"></i> 新建
 										</button>
 										
@@ -146,7 +146,7 @@
 											id="selall" type="checkbox" class="icheckbox_square-blue">
 										</th>
 										<th class="sorting_asc">ID</th>
-										<th class="sorting_desc">学生名称</th>
+										<th class="sorting_desc">姓名</th>
 										<th class="sorting_desc">性别</th>
 										<th class="sorting">年龄</th>
 										<th class="sorting">电话</th>

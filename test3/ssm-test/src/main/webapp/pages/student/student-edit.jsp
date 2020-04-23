@@ -92,7 +92,7 @@
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action=""
+			<form action="${pageContext.request.contextPath}/student/update"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -100,29 +100,29 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">学生信息</div>
 					<div class="row data-type">
-						<input type="hidden" name="studentno" value="">
-						<div class="col-md-2 title">学生名称</div>
+						<input type="hidden" name="studentno" value="${student.studentno}">
+						<div class="col-md-2 title">学生姓名</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="name"
-								placeholder="" value="">
+								placeholder="" value="${student.name}">
 						</div>
 						<div class="col-md-2 title">性别</div>
                         <div class="col-md-4 data">
                             <input type="text" class="form-control" name="sex"
-                                   placeholder="性别" value="">
+                                   placeholder="性别" value="${student.sex}">
                         </div>
 
 
 						<div class="col-md-2 title">年龄</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="age"
-								   placeholder="年龄" value="">
+								   placeholder="年龄" value="${student.age}">
 						</div>
 
 						<div class="col-md-2 title">电话</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="phone"
-								   placeholder="电话" value="">
+								   placeholder="电话" value="${student.phone}">
 						</div>
 
 						<div class="col-md-2 title">班级</div>
