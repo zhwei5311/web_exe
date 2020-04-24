@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhwei.test.mapper.StudentMapper">
+    <select id="get" resultType="zhwei.test.domain.Student">
+		select `studentno`,`name`,`sex`,`age`,`phone`,`gradeid` from student where studentno = #{value}
+	</select>
+
+    <select id="list" resultType="zhwei.test.domain.Student">
+        select  `studentno`,`name`,`sex`,`age`,`phone`,s.`gradeid`,`gradename`,`address` from student s, grade g
+        <where>
+            s.gradeid = g.gradeid
+            <if test="studentno != null and studentno != ''"> and s.studentno = #{studentno} </if>
+            <if test="name != null and name != ''"> and s.name = #{name} </if>
+            <if test="sex != null and sex != ''"> and s.sex = #{sex} </if>
+            <if test="age != null and age != ''"> and s.age = #{age} </if>
+            <if test="phone != null and phone != ''"> and s.phone = #{phone} </if>
+            <if test="gradeid != null and gradeid != ''"> and s.gradeid = #{gradeid} </if>
+            <if test="gradename != null and gradename != ''"> and g.gradename = #{gradename} </if>
+            <if test="address != null and address != ''"> and g.address = #{address} </if>
+        </where>
+        <choose>
+            <otherwise>
+                order by s.studentno
+            </otherwise>
+        </choose>
+        <if test="offset != null and limit != null">
+            limit #{offset}, #{limit}
+        </if>
+    </select>
+
+    <select id="count" resultType="int">
+        select count(*) from student
+        <where>
+            <if test="studentno != null and studentno != ''"> and studentno = #{studentno} </if>
+            <if test="name != null and name != ''"> and name = #{name} </if>
+            <if test="sex != null and sex != ''"> and sex = #{sex} </if>
+            <if test="age != null and age != ''"> and age = #{age} </if>
+            <if test="phone != null and phone != ''"> and phone = #{phone} </if>
+            <if test="gradeid != null and gradeid != ''"> and gradeid = #{gradeid} </if>
+        </where>
+    </select>
+
+    <insert id="save" parameterType="zhwei.test.domain.Student" useGeneratedKeys="true" keyProperty="id">
+		insert into student
+		(
+			`studentno`,
+			`name`,
+			`sex`,
+			`age`,
+			`phone`,
+			`gradeid`
+		)
+		values
+		(
+			#{studentno},
+			#{name},
+			#{sex},
+			#{age},
+			#{phone},
+			#{gradeid}
+		)
+	</insert>
+
+    <update id="update" parameterType="zhwei.test.domain.Student">
+        update student
+        <set>
+            <if test="studentno != null">`studentno` = #{studentno}, </if>
+            <if test="name != null">`name` = #{name}, </if>
+            <if test="sex != null">`sex` = #{sex}, </if>
+            <if test="age != null">`age` = #{age}, </if>
+            <if test="phone != null">`phone` = #{phone}, </if>
+            <if test="gradeid != null">`gradeid` = #{gradeid}</if>
+        </set>
+        where studentno = #{studentno}
+    </update>
+
+    <delete id="remove">
+		delete from student where studentno = #{value}
+	</delete>
+</mapper>

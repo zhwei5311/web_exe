@@ -1,0 +1,10 @@
+zhwei\test\service\GradeService.class
+zhwei\test\controller\StudentController.class
+zhwei\test\domain\Student.class
+zhwei\test\service\impl\StudentServiceImpl.class
+zhwei\test\domain\Grade.class
+zhwei\test\mapper\GradeMapper.class
+zhwei\test\service\StudentService.class
+zhwei\test\controller\GradeController.class
+zhwei\test\service\impl\GradeServiceImpl.class
+zhwei\test\mapper\StudentMapper.class
